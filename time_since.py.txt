@@ -1,0 +1,22 @@
+from datetime import datetime, timedelta
+
+# التاريخ والوقت المرجعي
+start_time = datetime(2024, 11, 17, 11, 0, 0)
+
+# الحصول على الوقت الحالي
+current_time = datetime.now()
+
+# حساب الفرق الزمني
+time_diff = current_time - start_time
+
+# استخراج الأيام والساعات والدقائق والثواني من الفرق الزمني
+days = time_diff.days
+hours, remainder = divmod(time_diff.seconds, 3600)
+minutes, seconds = divmod(remainder, 60)
+
+# النص المطلوب مع الطباعة
+print("كم مر من الوقت منذ أن أكل مازق حقي")
+if days > 0:
+    print(f"{days} يوم, {hours} ساعة, {minutes} دقيقة, و {seconds} ثانية.")
+else:
+    print(f"{hours} ساعة, {minutes} دقيقة, و {seconds} ثانية.")
